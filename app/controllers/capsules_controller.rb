@@ -1,5 +1,6 @@
 class CapsulesController < ApplicationController
-  before_action :find_capsule, only:[ :show, :edit, :update, :destroy]
+  before_action :find_capsule, only:[:show, :edit, :update, :destroy]
+  before_action :find_mindmap, only: [ :index, :show, :edit, :update, :destroy]
   before_action :authenticate_author!
 
   def index
@@ -27,7 +28,7 @@ class CapsulesController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def destroy
@@ -35,11 +36,15 @@ class CapsulesController < ApplicationController
 
   private
 
+  def find_mindmap
+    @mindmap = current_author.mindmaps.find_by(params[:id])
+  end
+
   def find_capsule
     @capsule = Capsule.find(params[:id])
   end
 
   def capsule_params
-    params.require(:capsule).permit(:title, :about, :purpose)
+    params.require(:capsule).permit(:title, :about, :purpose,  mindmaps_attributes: [ :src, :src_purpose, :id ])
   end
 end

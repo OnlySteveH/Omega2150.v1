@@ -1,0 +1,9 @@
+<h1>Mindmaps#show</h1>
+<p>Find me in app/views/mindmaps/show.html.erb</p>
+<strong> <%= @mindmap.capsule.title %> </strong>
+<%= @mindmap.capsule.author.email %>
+<%= @mindmap.src %>
+<%= @mindmap.src_purpose %>
+
+<%= link_to 'Back', mindmaps_path %>
+<%= link_to 'Edit', edit_mindmap_path %>

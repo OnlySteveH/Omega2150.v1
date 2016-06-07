@@ -2,6 +2,11 @@
   <%= f.input :title, class:'form-control' %>
   <%= f.input :about, as: :text, class: 'form-control'%>
   <%= f.input :purpose, as: :text, class: 'form-control'%>
+  <%= f.simple_fields_for :mindmap do |mindmap| %>
+      <%= mindmap.input :src %>
+      <%= mindmap.input :src_purpose %>
+  <% end %>
+
   <%= f.button :submit, class:'btn btn-primary' %>
   <%= link_to "Cancel", capsules_path %>
 <% end %>

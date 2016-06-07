@@ -1,0 +1,16 @@
+<h1>Mindmaps#index</h1>
+<p>Find me in app/views/mindmaps/index.html.erb</p>
+<%= link_to "Create Mindmap", new_mindmap_path %>
+<% @mindmaps.each do |mindmap| %>
+  <div class="mindmap">
+      <strong>Name: <%= mindmap.author.email %></strong>
+      <p><%= mindmap.src %></p>
+      <div class="meta">
+        <%= link_to time_ago_in_words(mindmap.created_at) + " ago" , mindmap %>
+        <span class="admin">
+          | <%= link_to "Edit", edit_mindmap_path(mindmap) %> |
+          <%= link_to "Delete", mindmap ,  method: :delete, data: {confirm: "Are you sure you want to delete this Mindmap"} %>
+        </span>
+      </div>
+  </div>
+<% end %>

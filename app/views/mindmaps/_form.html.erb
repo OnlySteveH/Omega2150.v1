@@ -1,0 +1,8 @@
+
+
+<%= simple_form_for(@mindmap) do |f| %>
+<%= f.input :src, class:'form-control' %>
+<%= f.input :src_purpose, class: 'form-control'%>
+<%= f.button :submit %>
+<%= f.input :capsule_id, collection: Capsule.all, label_method: :title %>
+<% end %>

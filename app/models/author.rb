@@ -4,4 +4,6 @@ class Author < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :capsules
+  has_many :mindmaps
+  accepts_nested_attributes_for :capsules, :mindmaps
 end
