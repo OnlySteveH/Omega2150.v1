@@ -1,0 +1,7 @@
+<%= @capsule.title %>
+<%= @capsule.about %>
+<%= @capsule.purpose %>
+<h4><%= @capsule.author.email %></h4>
+<%= link_to "All Capsules", capsules_path %>
+<%= link_to "Edit Capsule", edit_capsule_path %>
+<%= link_to "Delete Capsule", capsule_path, method: :delete, data: {confirm: "Are you sure you want to delete the capsule"} %>

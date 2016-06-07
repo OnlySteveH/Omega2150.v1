@@ -1,0 +1,8 @@
+<h1> Index Page </h1>
+<%= link_to "Create New Capsule", new_capsule_path %>
+<% @capsules.each do |capsule| %>
+  <h2><%=  capsule.title %></h2>
+  <%= capsule.about %>
+  <%= capsule.purpose %>
+  <%= link_to @capsule.title, @capsule %>
+<% end %>
