@@ -7,9 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/messages' %>
-
-<%= yield %>
-
+  <div class= "row">
+    <div class= "col-xs-2 side-bar-container">
+        <ul class="nav navbar-nav">
+        <% if author_signed_in? %>
+          <li><%= link_to current_author.email , edit_author_registration_path %></li>
+          <li><%= link_to "Create New Capsule", new_capsule_path %></li>
+          <li><%= link_to "Create New Mindmap", new_mindmap_path %></li>
+          <li class="active"><%= link_to "Log Out" , destroy_author_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign In", new_author_session_path %></li>
+          <li><%= link_to "Sign Up", new_author_registration_path %></li>
+        <% end %>
+        </ul>
+    </div>
+    <div class="col-xs-10 container-fluid">
+      <%= render 'layouts/messages' %>
+          <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

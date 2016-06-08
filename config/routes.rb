@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :comments
+
   devise_for :authors
   resources :capsules
 

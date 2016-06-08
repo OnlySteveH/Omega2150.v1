@@ -1,0 +1,8 @@
+<h1>Comments#new</h1>
+<p>Find me in app/views/comments/new.html.erb</p>
+<%= simple_form_for(@comment) do |f| %>
+<%= f.input :comment_content , as: :text, class:'form-control' %>
+<%= f.input :author_id , collection: Author.all, label_method: :email %>
+<%= f.input :capsule_id, collection: Capsule.all, label_method: :title %>
+<%= f.button :submit %>
+<% end %>

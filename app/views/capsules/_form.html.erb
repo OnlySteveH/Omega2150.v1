@@ -1,12 +1,24 @@
-<%= simple_form_for(@capsule , multipart: true) do |f| %>
-  <%= f.input :title, class:'form-control' %>
-  <%= f.input :about, as: :text, class: 'form-control'%>
-  <%= f.input :purpose, as: :text, class: 'form-control'%>
-  <%= f.simple_fields_for :mindmap do |mindmap| %>
-      <%= mindmap.input :src %>
-      <%= mindmap.input :src_purpose %>
-  <% end %>
-
-  <%= f.button :submit, class:'btn btn-primary' %>
-  <%= link_to "Cancel", capsules_path %>
-<% end %>
+<div class="row">
+    <div class="col-xs-4">
+      input the capsule image uploader
+    </div>
+    <div class="col-xs-4">
+      <%= simple_form_for(@capsule , multipart: true) do |f| %>
+      <div class="form-group">
+        <%= f.input :title, class:'form-control' %>
+      </div>
+        <%= f.input :about, as: :text, class: 'form-control form-control-lg'%>
+        <%= f.input :purpose, as: :text, class: 'form-control'%>
+      </div>
+      <div class="col-sm-2">
+        <%= f.simple_fields_for :mindmap do |mindmap| %>
+            <%= mindmap.input :src, class:'form-control form-control-sm' %>
+            <%= mindmap.input :src_purpose, as: :text %>
+        <% end %>
+      </div>
+      <div class="col-xs-2">
+          <%= f.button :submit, class:'btn btn-primary' %>
+          <%= link_to "Cancel", capsules_path %>
+        <% end %>
+    </div>
+</div>

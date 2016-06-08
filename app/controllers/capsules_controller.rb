@@ -25,6 +25,11 @@ class CapsulesController < ApplicationController
   end
 
   def update
+    if @capsule.update(capsule_params)
+      redirect_to @capsule , notice: "You have successfully Updated your Capsule"
+    else
+      render 'edit'
+    end
   end
 
   def show
@@ -41,7 +46,7 @@ class CapsulesController < ApplicationController
   end
 
   def find_capsule
-    @capsule = Capsule.find(params[:id])
+    @capsule = current_author.capsules.find_by(params[:id])
   end
 
   def capsule_params

@@ -12,5 +12,70 @@
  *
 
  */
+/* application body styling */
+ html, body, .container-fluid, .row , ul{
+     height: 100%;
+     width: 100%;
+ }
+
+ @media (min-width: 992px) {
+   .sidebar {
+     position: fixed;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     z-index: 1000;
+     display: block;
+     background-color: #CCCCCC;
+   }
+ }
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ /*flash*/
+ .alert-error {
+     background-color: #f2dede;
+     border-color: #eed3d7;
+     color: #b94a48;
+     text-align: left;
+  }
+
+ .alert-alert {
+     background-color: #f2dede;
+     border-color: #eed3d7;
+     color: #b94a48;
+     text-align: left;
+  }
+
+ .alert-success {
+     background-color: #dff0d8;
+     border-color: #d6e9c6;
+     color: #468847;
+     text-align: left;
+  }
+
+ .alert-notice {
+     background-color: #dff0d8;
+     border-color: #d6e9c6;
+     color: #468847;
+     text-align: left;
+  }
+
+/* side bar container */
+ul{
+  display: block;
+
+}
+.side-bar-container{
+  position: relative;
+  background: black;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav{
+  margin-left: 30px;
+  margin-top: 50px;
+}

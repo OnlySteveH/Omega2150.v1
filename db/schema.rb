@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607222230) do
+ActiveRecord::Schema.define(version: 20160608202304) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20160607222230) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "authors", ["email"], name: "index_authors_on_email", unique: true
@@ -42,6 +44,18 @@ ActiveRecord::Schema.define(version: 20160607222230) do
 
   add_index "capsules", ["author_id"], name: "index_capsules_on_author_id"
   add_index "capsules", ["title"], name: "index_capsules_on_title"
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "comment_content"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "author_id"
+    t.integer  "capsule_id"
+  end
+
+  add_index "comments", ["author_id"], name: "index_comments_on_author_id"
+  add_index "comments", ["capsule_id"], name: "index_comments_on_capsule_id"
+  add_index "comments", ["comment_content"], name: "index_comments_on_comment_content"
 
   create_table "mindmaps", force: :cascade do |t|
     t.string   "src"

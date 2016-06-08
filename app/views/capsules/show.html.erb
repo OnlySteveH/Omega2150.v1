@@ -1,11 +1,11 @@
 <%= @capsule.title %>
+<%= link_to @capsule.author.set_fullname %>
 <%= @capsule.about %>
 <%= @capsule.purpose %>
-<strong><%= @mindmap.src %></strong>
-<span><%= @mindmap.src_purpose %></span>
-<h4><%= @capsule.author.email %></h4>
+
 <%= link_to "See Capsule", capsule_path %>
 <%= link_to "All Capsules", capsules_path %>
 <%= link_to "Edit Capsule", edit_capsule_path %>
 <%= link_to "Delete Capsule", capsule_path, method: :delete, data: {confirm: "Are you sure you want to delete the capsule"} %>
 <%= link_to "Create Mindmap", new_mindmap_path %>
+<%= link_to "Create Mindmap", new_comment_path %>

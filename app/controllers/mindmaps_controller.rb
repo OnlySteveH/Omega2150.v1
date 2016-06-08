@@ -34,6 +34,11 @@ class MindmapsController < ApplicationController
     end
   end
 
+  def destroy
+    @mindmap.destroy
+    redirect_to mindmaps_path
+  end
+
   private
 
   def find_mindmap
