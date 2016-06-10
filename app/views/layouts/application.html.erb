@@ -11,7 +11,7 @@
     <div class= "col-xs-2 side-bar-container">
         <ul class="nav navbar-nav">
         <% if author_signed_in? %>
-          <li><%= link_to current_author.email , edit_author_registration_path %></li>
+          <li><%= link_to current_author.author_fullname , edit_author_registration_path %></li>
           <li><%= link_to "Create New Capsule", new_capsule_path %></li>
           <li><%= link_to "Create New Mindmap", new_mindmap_path %></li>
           <li class="active"><%= link_to "Log Out" , destroy_author_session_path, method: :delete %></li>
@@ -22,8 +22,14 @@
         </ul>
     </div>
     <div class="col-xs-10 container-fluid">
+
       <%= render 'layouts/messages' %>
+      <% if author_signed_in? %>
+          <li><%= link_to current_author.author_fullname , profile_path(current_author) %></li>
           <%= yield %>
+      <% else %>
+        <%= yield %>
+      <% end %>
     </div>
   </div>
 </body>

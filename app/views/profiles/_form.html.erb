@@ -1,0 +1,13 @@
+
+<%= simple_form_for(@profile, multipart: true, class: 'form-control') do |f| %>
+  <%= f.input :first_name %> <%= f.input :last_name %>
+  <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 40,
+                             end_year: Date.today.year , discard_day: false,
+                             order: [:day ,:month, :year] %>
+  <%= f.input :about_me, as: :text %>
+  <%= f.input :nationality %>
+  <%= f.input :zipcode %>
+  <%= f.input :state %>
+  <%= f.input  :sexe %>
+  <%= f.button :submit %>
+<% end %>

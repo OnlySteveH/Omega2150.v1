@@ -1,4 +1,6 @@
 class CapsulesController < ApplicationController
+
+  before_action :find_profile, only: [:show, :create]
   before_action :find_capsule, only:[:show, :edit, :update, :destroy]
   before_action :find_mindmap, only: [ :index, :show, :edit, :update, :destroy]
   before_action :authenticate_author!
@@ -9,13 +11,15 @@ class CapsulesController < ApplicationController
   end
 
   def new
-    @capsule = current_author.capsules.build
+    @capsule = Capsule.new
+    @capsule.mindmaps.build
+
   end
 
   def create
-    @capsule = current_author.capsules.build(capsule_params)
+    @capsule = current_author.profile.capsules.build(capsule_params)
     if @capsule.save
-      redirect_to @capsule , notice: " Your Capsule was successfully created"
+      redirect_to profile_path(@profile) , notice: " Your Capsule was successfully created"
     else
      render 'new'
     end
@@ -33,7 +37,7 @@ class CapsulesController < ApplicationController
   end
 
   def show
-
+    @mindmap = @capsule.mindmaps.find_by(params[:id])
   end
 
   def destroy
@@ -41,15 +45,19 @@ class CapsulesController < ApplicationController
 
   private
 
+  def find_profile
+    @profile = current_author.profile
+  end
+
   def find_mindmap
-    @mindmap = current_author.mindmaps.find_by(params[:id])
+    @mindmap = Mindmap.find_by(params[:id])
   end
 
   def find_capsule
-    @capsule = current_author.capsules.find_by(params[:id])
+    @capsule = Capsule.find_by(params[:id])
   end
 
   def capsule_params
-    params.require(:capsule).permit(:title, :about, :purpose,  mindmaps_attributes: [ :src, :src_purpose, :id ])
+    params.require(:capsule).permit(:title, :about, :purpose, :profile_id,  mindmaps_attributes: [ :src, :src_purpose, :id])
   end
 end

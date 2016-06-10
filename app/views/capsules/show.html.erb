@@ -1,7 +1,13 @@
-<%= @capsule.title %>
-<%= link_to @capsule.author.set_fullname %>
+
+
+
+<%=  @capsule.title %>
 <%= @capsule.about %>
 <%= @capsule.purpose %>
+<% @capsule.mindmaps.each do |mindmap| %>
+    <%= mindmap.src %>
+    <strong><%= mindmap.src_purpose %></strong>
+<% end %>
 
 <%= link_to "See Capsule", capsule_path %>
 <%= link_to "All Capsules", capsules_path %>

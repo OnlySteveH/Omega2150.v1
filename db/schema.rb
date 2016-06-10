@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608202304) do
+ActiveRecord::Schema.define(version: 20160610022207) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,10 +40,22 @@ ActiveRecord::Schema.define(version: 20160608202304) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "author_id"
+    t.integer  "profile_id"
   end
 
   add_index "capsules", ["author_id"], name: "index_capsules_on_author_id"
+  add_index "capsules", ["profile_id"], name: "index_capsules_on_profile_id"
   add_index "capsules", ["title"], name: "index_capsules_on_title"
+
+  create_table "collabs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "author_id"
+    t.integer  "capsule_id"
+  end
+
+  add_index "collabs", ["author_id"], name: "index_collabs_on_author_id"
+  add_index "collabs", ["capsule_id"], name: "index_collabs_on_capsule_id"
 
   create_table "comments", force: :cascade do |t|
     t.string   "comment_content"
@@ -63,10 +75,30 @@ ActiveRecord::Schema.define(version: 20160608202304) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "capsule_id"
+    t.integer  "profile_id"
+  end
+
+  add_index "mindmaps", ["capsule_id"], name: "index_mindmaps_on_capsule_id"
+  add_index "mindmaps", ["profile_id"], name: "index_mindmaps_on_profile_id"
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "about_me"
+    t.integer  "zipcode"
+    t.date     "date_of_birth"
+    t.string   "nationality"
+    t.string   "sexe"
+    t.string   "state"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "author_id"
   end
 
-  add_index "mindmaps", ["author_id"], name: "index_mindmaps_on_author_id"
-  add_index "mindmaps", ["capsule_id"], name: "index_mindmaps_on_capsule_id"
+  add_index "profiles", ["author_id"], name: "index_profiles_on_author_id"
+  add_index "profiles", ["first_name"], name: "index_profiles_on_first_name"
+  add_index "profiles", ["last_name"], name: "index_profiles_on_last_name"
+  add_index "profiles", ["state"], name: "index_profiles_on_state"
+  add_index "profiles", ["zipcode"], name: "index_profiles_on_zipcode"
 
 end

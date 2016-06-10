@@ -5,4 +5,5 @@
 <%= f.input :src_purpose, class: 'form-control'%>
 <%= f.button :submit %>
 <%= f.input :capsule_id, collection: Capsule.all, label_method: :title %>
+<%= f.input :profile_id, collection: Profile.all, label_method: :profile_name%>
 <% end %>

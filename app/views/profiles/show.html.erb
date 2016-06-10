@@ -1,0 +1,26 @@
+<h1>Profiles#show</h1>
+<p>Find me in app/views/profiles/show.html.erb</p>
+
+
+<%= @profile.about_me %>
+<%= link_to @profile.profile_name, profile_path %>
+<% if @profile.capsules.any? %>
+    <% @profile.capsules.each do |capsule| %>
+      Capsule Title: <%= capsule.title %>
+      Capsule About:<%= capsule.about %>
+      Capsule Purpose:<%= capsule.purpose %>
+      Mindmap: <%= capsule.mindmaps.count %>
+    <% end %>
+    <% else %>
+     DISplay you need to make a capsule
+    <% end %>
+
+  <% @profile.mindmaps.each do |mindmap| %>
+    <h1><%= mindmap.src_purpose %></h1>
+    <h1><%= mindmap.src %></h1>
+
+  <% end %>
+
+
+<%= link_to "Edit Profile", edit_profile_path(current_author) %>
+<%= link_to "Add New Mindmap", new_mindmap_path %>

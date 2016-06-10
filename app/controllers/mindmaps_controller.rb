@@ -1,4 +1,5 @@
 class MindmapsController < ApplicationController
+
   before_action :find_mindmap, only: [:show, :edit, :update, :destroy]
   before_action :find_capsule, only: [:new, :create, :update, :destroy]
   before_action :authenticate_author!
@@ -8,13 +9,13 @@ class MindmapsController < ApplicationController
   end
 
   def new
-    @mindmap = current_author.mindmaps.build
+    @mindmap = Mindmap.new
   end
 
   def create
-     @mindmap = current_author.mindmaps.build(mindmap_params)
+    @mindmap = Mindmap.new(mindmap_params)
     if @mindmap.save
-      redirect_to @mindmap, notice:"You have successfully created a Mindmap"
+      redirect_to profile_path(current_author), notice:"You have successfully created a Mindmap"
     else
       render 'new'
     end
@@ -41,6 +42,8 @@ class MindmapsController < ApplicationController
 
   private
 
+
+
   def find_mindmap
     @mindmap = Mindmap.find(params[:id])
   end
@@ -50,6 +53,6 @@ class MindmapsController < ApplicationController
   end
 
   def mindmap_params
-    params.require(:mindmap).permit(:src, :src_purpose, :capsule_id )
+    params.require(:mindmap).permit(:src, :src_purpose, :capsule_id, :profile_id)
   end
 end

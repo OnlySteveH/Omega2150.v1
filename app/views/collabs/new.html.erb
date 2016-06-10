@@ -1,0 +1,8 @@
+<h1>Collabs#new</h1>
+<p>Find me in app/views/collabs/new.html.erb</p>
+
+<%= simple_form_for(@collab) do |f| %>
+  <%= f.input :author_id, collection: Author.all, label_method: :set_fullname %>
+  <%= f.input :capsule_id, collection: Capsule.all, label_method: :title %>
+  <%= f.button :submit, 'Add Collabs', class: 'btn btn-primary' %>
+<% end %>

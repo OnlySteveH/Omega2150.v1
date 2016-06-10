@@ -9,16 +9,19 @@
       </div>
         <%= f.input :about, as: :text, class: 'form-control form-control-lg'%>
         <%= f.input :purpose, as: :text, class: 'form-control'%>
+        <%= f.input :profile_id, collection: Profile.all, label_method: :profile_name %>
       </div>
       <div class="col-sm-2">
-        <%= f.simple_fields_for :mindmap do |mindmap| %>
+        <%= f.simple_fields_for :mindmaps do |mindmap| %>
             <%= mindmap.input :src, class:'form-control form-control-sm' %>
             <%= mindmap.input :src_purpose, as: :text %>
-        <% end %>
+            <%= mindmap.input :capsule_id, collection: Capsule.all, label_method: :title %>
       </div>
+
       <div class="col-xs-2">
           <%= f.button :submit, class:'btn btn-primary' %>
           <%= link_to "Cancel", capsules_path %>
+          <% end %>
         <% end %>
     </div>
 </div>

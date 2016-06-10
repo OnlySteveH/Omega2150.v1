@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :comments
-
   devise_for :authors
+  resources :profiles
+  resources :collabs
+  resources :comments
   resources :capsules
-
-  root 'capsules#new'
-
   resources :mindmaps
+  root 'profiles#new'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
