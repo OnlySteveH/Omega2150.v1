@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-md-12" id="profile-page-form">
+    <h2>Create Your Profile</h2>
     <form class="form-inline">
       <div class="form-group">
         <%= simple_form_for(@profile, multipart: true, class: 'form-control') do |f| %>
@@ -13,7 +14,6 @@
           <li><%= f.input :nationality, label: false,placeholder: "Enter Your Nationality" %></<li>
           <li><%= f.input :zipcode,label: false, placeholder:"Enter your Zipcode" %></li>
           <li><%= f.input :state,label: false, placeholder:"Select a State" %></li>
-
         </div>
           </div>
         </ul>
@@ -25,9 +25,7 @@
                                      order: [:day ,:month, :year],label: false %>
       </form>
     </div>
-
-
-      <div class="form-group col-md-3 col-md-offset-11">
+    <div class="form-group col-md-3 col-md-offset-10">
     <form class="form-inline">
        <%= f.input :about_me, as: :text, id:"about_me",label: false, placeholder:"Add something clever after all this is an Authobiography" %>
       </div>

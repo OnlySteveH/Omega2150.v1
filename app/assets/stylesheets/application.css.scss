@@ -85,16 +85,19 @@ li {
   margin-top: 7px;
   margin-bottom: 10px;
   list-style-type: none;
-
-
 }
-
 
 .nav{
-  margin-left: 30px;
-  margin-top: 50px;
+  margin-left: 15px;
+  margin-top: 47px;
 }
 
+.navbar-nav > li > a{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 6%;
+  width: 100%;
+}
 /* forms styling */
 .form-control{
   display: inline-block;
@@ -123,7 +126,7 @@ li.author-personal-info-form{
   height: 200px;
   width: 300px;
   margin-top: -205px;
-  margin-left: -358px;
+  margin-left: -286px;
 }
 
 #DOB-container{
@@ -133,6 +136,7 @@ li.author-personal-info-form{
 
 #profile_nationality,#profile_first_name,#profile_last_name{
   height: 46px;
+  border-radius: 0px;
 }
 
 div#profile-page-form{
@@ -142,7 +146,7 @@ div#profile-page-form{
 
 input#profile_submit{
   margin-top: 2%;
-  margin-left: 77%;
+  margin-left: 76%;
 }
 
 div#profile-location-form{

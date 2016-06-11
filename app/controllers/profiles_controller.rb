@@ -41,7 +41,7 @@ private
 
   def profile_params
     params.require(:profile).permit(:first_name, :last_name, :about_me, :date_of_birth,
-                                    :nationality, :zipcode, :state, :sexe, capsules_attributes: [:id])
+                                    :nationality, :zipcode, :state, :sexe)
   end
 
   def find_profile
