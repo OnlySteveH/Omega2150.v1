@@ -106,7 +106,7 @@ li {
 }
 
 div.form-inline {
-  margin-left: 38px;
+  margin-left: 0px;
   margin-top:  -9px;
   width: 300px;
 }
@@ -125,8 +125,8 @@ li.author-personal-info-form{
 #profile_about_me{
   height: 200px;
   width: 300px;
-  margin-top: -205px;
-  margin-left: -286px;
+  margin-top: 2%;
+  margin-left: 7%;
 }
 
 #DOB-container{
@@ -134,9 +134,10 @@ li.author-personal-info-form{
   margin-left:  1%;
 }
 
-#profile_nationality,#profile_first_name,#profile_last_name{
+#profile_nationality,#profile_first_name,#profile_last_name, #profile_sexe{
   height: 46px;
   border-radius: 0px;
+  width: 200px
 }
 
 div#profile-page-form{
@@ -150,5 +151,16 @@ input#profile_submit{
 }
 
 div#profile-location-form{
+  margin-left: 30%;
+}
+
+/* Capsule form && MindMap */
+form#mindmap.form-inline{
+  margin-left: 70%;
+  margin-top: -20%;
+}
+
+ul#capsule-form-input li{
+  margin-bottom:  10px;
   margin-left: 30%;
 }
