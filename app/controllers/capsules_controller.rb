@@ -13,7 +13,6 @@ class CapsulesController < ApplicationController
   def new
     @capsule = Capsule.new
     @capsule.mindmaps.build
-
   end
 
   def create

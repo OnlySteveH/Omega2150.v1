@@ -9,17 +9,23 @@
       Capsule Title: <%= capsule.title %>
       Capsule About:<%= capsule.about %>
       Capsule Purpose:<%= capsule.purpose %>
-      Mindmap: <%= capsule.mindmaps.count %>
+        <% if capsule.mindmaps.any? %>
+          Mindmap: <% capsule.mindmaps.each do |mindmap| %>
+          <%= mindmap.src %>
+          <%= mindmap.src_purpose %>
+          <%end %>
+       <% else %>
+       DISplay you need to make a capsule
+     <% end %>
     <% end %>
-    <% else %>
-     DISplay you need to make a capsule
-    <% end %>
+<% end %>
+
 
   <% @profile.mindmaps.each do |mindmap| %>
     <h1><%= mindmap.src_purpose %></h1>
     <h1><%= mindmap.src %></h1>
 
-  <% end %>
+<% end %>
 
 
 <%= link_to "Edit Profile", edit_profile_path(current_author) %>

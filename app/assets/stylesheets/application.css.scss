@@ -61,21 +61,90 @@
      color: #468847;
      text-align: left;
   }
+/* application lay out CSS */
+.page-container{
+  margin-left: 15%;
+}
+
+.side-bar-container{
+  position: fixed;
+  background: black;
+  height: 100%;
+  width: 15%;
+  padding-left: 0;
+  padding-right: 0;
+}
 
 /* side bar container */
 ul{
   display: block;
 
 }
-.side-bar-container{
-  position: relative;
-  background: black;
-  height: 100%;
-  padding-left: 0;
-  padding-right: 0;
+
+li {
+  margin-top: 7px;
+  margin-bottom: 10px;
+  list-style-type: none;
+
+
 }
+
 
 .nav{
   margin-left: 30px;
   margin-top: 50px;
+}
+
+/* forms styling */
+.form-control{
+  display: inline-block;
+  width: 50%;
+  background-color: #ddd;
+}
+
+div.form-inline {
+  margin-left: 38px;
+  margin-top:  -9px;
+  width: 300px;
+}
+
+label{
+  max-width: 40%;
+  margin-left: 5px;
+}
+
+li.author-personal-info-form{
+  margin-top: -14%;
+  margin-left: 30%;
+
+}
+
+#profile_about_me{
+  height: 200px;
+  width: 300px;
+  margin-top: -205px;
+  margin-left: -358px;
+}
+
+#DOB-container{
+  margin-top: 26%;
+  margin-left:  1%;
+}
+
+#profile_nationality,#profile_first_name,#profile_last_name{
+  height: 46px;
+}
+
+div#profile-page-form{
+  padding-left: 10%;
+  padding-top:  5%;
+}
+
+input#profile_submit{
+  margin-top: 2%;
+  margin-left: 77%;
+}
+
+div#profile-location-form{
+  margin-left: 30%;
 }
