@@ -163,4 +163,26 @@ form#mindmap.form-inline{
 ul#capsule-form-input li{
   margin-bottom:  10px;
   margin-left: 30%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+input#capsule_title {
+  height: 50px;
+  width:  100%;
+  padding-left: 3%;
+}
+
+textarea#capsule_about, textarea#capsule_purpose {
+  height: 200px;
+  width: 100%;
+}
+
+select#capsule_profile_id{
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+ul#capsule-form-input{
+  padding: 2% 2% 2% 2%;
 }

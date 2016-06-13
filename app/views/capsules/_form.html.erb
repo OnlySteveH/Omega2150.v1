@@ -1,21 +1,17 @@
 <div class="row">
-  <div class="col-md-12" id="profile-page-form">
-    <form class="form-inline", id="capsule-form-input">
-        <div class="form-group">
-          <div class="col-md-4 container">
+  <div class="col-md-12">
+          <div class="col-md-4">
           input the capsule image uploader
-        </div>
+          </div>
           <div class="col-md-4 container">
-            <%= simple_form_for(@capsule , multipart: true) do |f| %>
+                  <%= simple_form_for(@capsule , multipart: true) do |f| %>
             <ul id="capsule-form-input">
-              <li><%= f.input :title, class:'form-control' %></li>
-              <li><%= f.input :about, as: :text, class: 'form-control form-control-lg'%></li>
-              <li><%= f.input :purpose, as: :text, class: 'form-control'%></li>
+              <li><%= f.input :title, class:'form-control', label: false, placeholder: "Capsule Title"%></li>
+              <li><%= f.input :about, as: :text, class: 'form-control', label: false, placeholder: "Capsule About Info" %></li>
+              <li><%= f.input :purpose, as: :text, class: 'form-control', label: false, placeholder: "Capsule Purpose Info" %></li>
               <li><%= f.input :profile_id, collection: Profile.all, label_method: :profile_name %></li>
             </ul>
-          </div>
-          </div>
           <% end %>
-      </form>
-    </div>
+        </div>
+  </div>
 </div>

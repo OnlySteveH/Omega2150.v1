@@ -1,0 +1,41 @@
+// Place all the styles related to the Profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+li.author-personal-info-form{
+  margin-top: -14%;
+  margin-left: 30%;
+
+}
+
+#profile_about_me{
+  height: 200px;
+  width: 300px;
+  margin-top: 2%;
+  margin-left: 7%;
+}
+
+#DOB-container{
+  margin-top: 26%;
+  margin-left:  1%;
+}
+
+#profile_nationality,#profile_first_name,#profile_last_name, #profile_sexe{
+  height: 46px;
+  border-radius: 0px;
+  width: 200px
+}
+
+div#profile-page-form{
+  padding-left: 10%;
+  padding-top:  5%;
+}
+
+input#profile_submit{
+  margin-top: 2%;
+  margin-left: 76%;
+}
+
+div#profile-location-form{
+  margin-left: 30%;
+}
