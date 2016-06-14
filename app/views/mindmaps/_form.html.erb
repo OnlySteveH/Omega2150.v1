@@ -1,9 +1,9 @@
-
-
-<%= simple_form_for(@mindmap) do |f| %>
-<%= f.input :src, class:'form-control' %>
-<%= f.input :src_purpose, class: 'form-control'%>
-<%= f.button :submit %>
-<%= f.input :capsule_id, collection: Capsule.all, label_method: :title %>
-<%= f.input :profile_id, collection: Profile.all, label_method: :profile_name%>
-<% end %>
+<div class="col-md-4 mindmap-container">
+  <%= simple_form_for(@mindmap) do |f| %>
+    <%= f.input :src, class:'form-control', label: false, placeholder:"Add a URL" %>
+    <%= f.input :src_purpose, as: :text, class: 'form-control', label: false,  placeholder: "Add a description to your URL"%>
+    <%= f.input :capsule_id, label: false, collection: Capsule.all, default: 'Select a capsule', label_method: :title %>
+    <%= f.input :profile_id, label: false, collection: Profile.all, default: 'Select a Profile ID',label_method: :profile_name %>
+    <%= f.button :submit, class:'btn btn-primary' %>
+    <% end %>
+</div>

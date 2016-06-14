@@ -21,7 +21,7 @@ li.author-personal-info-form{
 }
 
 #profile_nationality,#profile_first_name,#profile_last_name, #profile_sexe{
-  height: 46px;
+  height: 50px;
   border-radius: 0px;
   width: 200px
 }
@@ -38,4 +38,9 @@ input#profile_submit{
 
 div#profile-location-form{
   margin-left: 30%;
+}
+
+input#profile_first_name{
+  height: 50px;
+  width: 100%;
 }
