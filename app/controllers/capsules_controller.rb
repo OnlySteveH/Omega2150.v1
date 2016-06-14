@@ -12,13 +12,13 @@ class CapsulesController < ApplicationController
 
   def new
     @capsule = Capsule.new
-    @capsule.mindmaps.build
+
   end
 
   def create
-    @capsule = current_author.profile.capsules.build(capsule_params)
+    @capsule = Capsule.new(capsule_params)
     if @capsule.save
-      redirect_to profile_path(@profile) , notice: " Your Capsule was successfully created"
+      redirect_to @capsule , notice:" Your Capsule was successfully created"
     else
      render 'new'
     end

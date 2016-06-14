@@ -64,6 +64,7 @@
 /* application lay out CSS */
 .page-container{
   margin-left: 15%;
+  padding-top: 1%;
 }
 
 .side-bar-container{
@@ -235,4 +236,44 @@ input#profile_state{
   padding-top: 1%;
   padding-bottom: 1%;
   margin-left: 7%;
+}
+
+
+/* Capsule show page UI */
+div#capsule-show-purpose{
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-top: 56%;
+  margin-left: -98%;
+  width: 99%;
+  text-align: justify;
+}
+
+div#capsule-show-about{
+  padding-top: 3%;
+  padding-bottom: 3%;
+  width: 98%;
+  text-align: justify;
+}
+
+div#capsule-show-container{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 42%;
+  height: 520px;
+}
+
+div#progression-picture-capsule{
+  width: 644px;
+  margin-left: -62%;
+  margin-top: 2%;
+  height: 78px;
+}
+
+div#capsule-show-container-master{
+  padding-top: 2%;
+  padding-left: 4%;
+  padding-bottom: 8%;
+  margin-left: 10%;
+  margin-top: 1%;
 }

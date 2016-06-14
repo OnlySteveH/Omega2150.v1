@@ -1,14 +1,27 @@
+<div class="col-md-12", id="capsule-show-container-master">
+  <div class="col-md-2 well">
+    <%=  @capsule.title %>
+  </div>
 
+  <div class="col-md-6", id="capsule-show-container">
+    <div class="col-md-2", id="capsule-show-about">
+      <%= @capsule.about %>
+    </div>
+    <div class="col-md-2", id="capsule-show-purpose">
+      <%= @capsule.purpose %>
+    </div>
+    <div class="col-md-2 well", id="progression-picture-capsule">
+      Progression Album
+    </div>
+  </div>
 
-
-<%=  @capsule.title %>
-<%= @capsule.about %>
-<%= @capsule.purpose %>
-<% @capsule.mindmaps.each do |mindmap| %>
-    <%= mindmap.src %>
-    <strong><%= mindmap.src_purpose %></strong>
-<% end %>
-
+  <div class="col-md-4">
+    <% @capsule.mindmaps.each do |mindmap| %>
+        <%= mindmap.src %>
+        <strong><%= mindmap.src_purpose %></strong>
+    <% end %>
+  </div>
+</div>
 <%= link_to "See Capsule", capsule_path %>
 <%= link_to "All Capsules", capsules_path %>
 <%= link_to "Edit Capsule", edit_capsule_path %>
