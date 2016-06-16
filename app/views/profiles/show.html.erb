@@ -12,8 +12,10 @@
 <ul class="capsule-container">
   <% if @profile.capsules.any? %>
       <% @profile.capsules.each do |capsule| %>
-      <li> Author Picture </li>
-      <li><%= link_to capsule.author.author_fullname, profile_path %></li>
+      <ul class="capsule-author-info">
+        <li> Author Picture </li>
+        <li><%= link_to capsule.author.author_fullname, profile_path %></li>
+      </ul>
         <ul class="capsule-social-data">
           <li id="capsule-title">Capsule Title: <%= capsule.title %></li>
           <li> Likes</li>
@@ -34,6 +36,7 @@
       <ol class="profile-mindmap-container">
          <% capsule.mindmaps.each do |mindmap| %>
         Mindmap:
+          <li><%= time_ago_in_words(mindmap.created_at) %><li>
           <li><%= mindmap.src %></li>
           <li><%= mindmap.src_purpose %></li>
           <%end %>
