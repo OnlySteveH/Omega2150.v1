@@ -15,7 +15,7 @@ class MindmapsController < ApplicationController
   def create
     @mindmap = Mindmap.new(mindmap_params)
     if @mindmap.save
-      redirect_to profile_path(current_author), notice:"You have successfully created a Mindmap"
+      redirect_to @mindmap , notice:"You have successfully created a Mindmap"
     else
       render 'new'
     end
@@ -45,7 +45,7 @@ class MindmapsController < ApplicationController
 
 
   def find_mindmap
-    @mindmap = Mindmap.find(params[:id])
+    @mindmap = Mindmap.find_by(params[:id])
   end
 
   def find_capsule

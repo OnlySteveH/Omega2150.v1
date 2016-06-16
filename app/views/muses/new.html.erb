@@ -1,0 +1,9 @@
+<h1>Muses#new</h1>
+<p>Find me in app/views/muses/new.html.erb</p>
+
+<%= simple_form_for(@muse, multipart: true) do |f| %>
+  <%= f.input :body %>
+  <%= f.input :image , as: :file, class:'form-control' %>
+  <%= f.button :submit %>
+
+<% end %>

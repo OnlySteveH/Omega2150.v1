@@ -1,0 +1,7 @@
+<h1>Muses#index</h1>
+<p>Find me in app/views/muses/index.html.erb</p>
+
+<% @muses.each do |muse| %>
+  <%= image_tag muse.image.url(:medium) %>
+  <%= link_to muse.author.author_fullname, profile_path(@profile) %>
+<% end %>

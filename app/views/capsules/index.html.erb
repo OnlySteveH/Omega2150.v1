@@ -1,11 +1,10 @@
 <h1> Index Page </h1>
 <%= link_to "Create New Capsule", new_capsule_path %>
 <%= link_to "Create Mindmap", new_mindmap_path %>
-<%= link_to capsule.author.set_fullname %>
 <%= @capsules.each do |capsule| %>
   <h2><%=  capsule.title %></h2>
   <%= capsule.about %>
   <strong><%= capsule.purpose %></strong>
-  <%= link_to @capsule.title, @capsule %>
+  <%= link_to capsule.title %>
 
 <% end %>

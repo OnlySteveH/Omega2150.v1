@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610022207) do
+ActiveRecord::Schema.define(version: 20160615093603) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -80,6 +80,19 @@ ActiveRecord::Schema.define(version: 20160610022207) do
 
   add_index "mindmaps", ["capsule_id"], name: "index_mindmaps_on_capsule_id"
   add_index "mindmaps", ["profile_id"], name: "index_mindmaps_on_profile_id"
+
+  create_table "muses", force: :cascade do |t|
+    t.string   "body"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "author_id"
+  end
+
+  add_index "muses", ["author_id"], name: "index_muses_on_author_id"
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"

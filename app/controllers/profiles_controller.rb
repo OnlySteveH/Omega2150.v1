@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :find_profile, only: [ :show, :edit, :update, :destroy]
+  before_action :find_mindmap
   before_action :authenticate_author!
 
 
@@ -7,11 +8,12 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = current_author.build_profile
+    @profile = Profile.new
   end
 
   def create
-    @profile = current_author.build_profile(profile_params)
+    @profile = Profile.new(profile_params)
+    @profile.author_id = current_author.id
     if @profile.save
        redirect_to @profile , notice: "You have successfully created a profile"
     else
@@ -37,7 +39,9 @@ class ProfilesController < ApplicationController
   end
 
 private
-
+  def find_mindmap
+    @mindmap = Mindmap.find_by(params[:id])
+  end
 
   def profile_params
     params.require(:profile).permit(:first_name, :last_name, :about_me, :date_of_birth,

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+#attachment to attach pictures
+gem 'paperclip'
 # to help with styling with forms
 gem 'simple_form'
 # for styling

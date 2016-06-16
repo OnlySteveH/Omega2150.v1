@@ -89,15 +89,24 @@ li {
 }
 
 .nav{
-  margin-left: 15px;
-  margin-top: 47px;
+  margin-left: 7%;
+  margin-top: 69%;
+  width: 93%;
+  height: 36%;
 }
 
 .navbar-nav > li > a{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-left: 6%;
+  display: block;
   width: 100%;
+}
+
+li#sign-up-link{
+  margin-top: 38%;
+  margin-left: -39%;
+}
+
+li#sign-in-link{
+  margin-left: 26%;
 }
 /* forms styling */
 .form-control{
@@ -240,24 +249,23 @@ input#profile_state{
 
 
 /* Capsule show page UI */
-div#capsule-show-purpose{
-  padding-top: 3%;
-  padding-bottom: 3%;
-  margin-top: 56%;
-  margin-left: -98%;
-  width: 99%;
+div.col-md-3#capsule-show-purpose{
+  margin-right: 4%;
+  margin-left: 33%;
+  width: 39%;
   text-align: justify;
 }
 
 div#capsule-show-about{
   padding-top: 3%;
+  padding-right: 3%;
   padding-bottom: 3%;
-  width: 98%;
+  width: 39%;
   text-align: justify;
 }
 
 div#capsule-show-container{
-  padding-top: 1%;
+  padding-top: 6%;
   padding-bottom: 1%;
   width: 42%;
   height: 520px;
@@ -269,11 +277,73 @@ div#progression-picture-capsule{
   margin-top: 2%;
   height: 78px;
 }
+/* profile page UI for Capsule */
 
-div#capsule-show-container-master{
-  padding-top: 2%;
-  padding-left: 4%;
+ul.capsule-container{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-right: 1%;
+  padding-left: 3%;
+  width: 85%;
+  height: auto;
+  border-style: solid;
+  border-width: 1px;
+}
+ul.capsule-social-data{
+  display: inline-flex;
+  margin-left: 22%;
+  padding-right: 25%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  width: 82%;
+
+}
+ul.capsule-social-data li{
+  padding-right:  1%;
+  padding-left: 1%;
+
+
+
+}
+
+ul.capsule-info{
+  width: 40%;
+  text-align: justify;
+  margin-left: 24%;
+  margin-right: 1%;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 2%;
+  border-style: solid;
+  border-width: 1px;
+  background-color: transparent;
+}
+
+ul.capsule-info li{
+  padding-right:  3%;
+  padding-top: 6%;
+  padding-left: 2%;
   padding-bottom: 8%;
+  margin-bottom: 0%;
   margin-left: 10%;
-  margin-top: 1%;
+  width: 80%;
+  background-color: whitesmoke;
+}
+
+ol.profile-mindmap-container{
+  margin-left: 65%;
+  margin-top:  -43%;
+  padding-bottom: 17%;
+  padding-top: 1%;
+  padding-right:  2%;
+  padding-left: 1%
+
+}
+
+li#capsule-title{
+  margin-left: -53%;
+  margin-top: 2%;
+  padding-right: 22%;
+
 }

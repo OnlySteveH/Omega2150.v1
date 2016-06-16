@@ -14,10 +14,11 @@
           <li><%= link_to current_author.author_fullname , edit_author_registration_path %></li>
           <li><%= link_to "Create New Capsule", new_capsule_path %></li>
           <li><%= link_to "Create New Mindmap", new_mindmap_path %></li>
+          <li><%= link_to "Create New Muse", new_muse_path %></li>
           <li class="active"><%= link_to "Log Out" , destroy_author_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to "Sign In", new_author_session_path %></li>
-          <li><%= link_to "Sign Up", new_author_registration_path %></li>
+          <li id="sign-in-link"><%= link_to "Sign In", new_author_session_path %></li>
+          <li id="sign-up-link"><%= link_to "Sign Up", new_author_registration_path %></li>
         <% end %>
         </ul>
     </div>
